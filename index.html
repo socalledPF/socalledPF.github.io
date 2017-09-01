@@ -12,6 +12,7 @@
 <meta property="og:title" content="潘烽的个人博客">
 <meta property="og:url" content="https://socalledPF.github.io/index.html">
 <meta property="og:site_name" content="潘烽的个人博客">
+<meta property="og:locale" content="zh">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="潘烽的个人博客">
   
@@ -146,6 +147,61 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-web中的缓存策略" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/01/web中的缓存策略/">web中的缓存策略</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/01/web中的缓存策略/" class="archive-article-date">
+  	<time datetime="2017-09-01T15:48:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>目的为了增强用户体验，减少服务器压力。所以设置缓存后，用户浏览一次网站后再次浏览就会使用浏览器缓存大大提升访问速度，而且减少了对服务器的请求。</p>
+<ol>
+<li><p>服务器端设置缓存，nginx配置开启压缩gzip，这样减少请求文件大小，从而减少请求时间。</p>
+</li>
+<li><p>web前端html中对css，js，图片的引用要加上版本号，这样保证更新的版本后，浏览器会请求最新的文件，若更新文件后，文件名不更改，同时服务器端设置很长时间的缓存，那么导致客户端浏览网页不能及时更新到最新版本。</p>
+</li>
+</ol>
+<p>我用的是<code>gulp-rev-append</code>插件，具体在文件名后面加上？rev=@@hash，执行一次gulp命令后，只要对应的文件有变化，hash值就回更改。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/01/web中的缓存策略/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
   
     <article id="post-修复ubuntu引导" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
