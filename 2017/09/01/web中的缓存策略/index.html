@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="潘烽的个人博客">
 <meta property="og:description" content="目的为了增强用户体验，减少服务器压力。所以设置缓存后，用户浏览一次网站后再次浏览就会使用浏览器缓存大大提升访问速度，而且减少了对服务器的请求。  服务器端设置缓存，nginx配置开启压缩gzip，这样减少请求文件大小，从而减少请求时间。  web前端html中对css，js，图片的引用要加上版本号，这样保证更新的版本后，浏览器会请求最新的文件，若更新文件后，文件名不更改，同时服务器端设置很长时间的">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2017-09-01T16:19:48.000Z">
+<meta property="og:updated_time" content="2017-09-05T11:53:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web中的缓存策略">
 <meta name="twitter:description" content="目的为了增强用户体验，减少服务器压力。所以设置缓存后，用户浏览一次网站后再次浏览就会使用浏览器缓存大大提升访问速度，而且减少了对服务器的请求。  服务器端设置缓存，nginx配置开启压缩gzip，这样减少请求文件大小，从而减少请求时间。  web前端html中对css，js，图片的引用要加上版本号，这样保证更新的版本后，浏览器会请求最新的文件，若更新文件后，文件名不更改，同时服务器端设置很长时间的">
@@ -178,6 +178,9 @@
 </li>
 </ol>
 <p>我用的是<code>gulp-rev-append</code>插件，具体在文件名后面加上？rev=@@hash，执行一次gulp命令后，只要对应的文件有变化，hash值就回更改。</p>
+<ol>
+<li>网站中使用的一些库，如果用cdn加载之前最好测试一下速度，对于国外的cdn源国内访问速度普遍较慢，所以放在本地加载速度更佳快。</li>
+</ol>
 
       
 
