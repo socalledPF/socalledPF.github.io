@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://socalledPF.github.io">
-  <title>Archives: 2017 | 潘烽的个人博客</title>
+  <title>关于web开发常见的工具proxy设置 | 潘烽的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="潘烽的个人博客">
-<meta property="og:url" content="https://socalledPF.github.io/archives/2017/index.html">
+  <meta name="description" content="前言 众所周知，由于国内互联网政策，国内网络连接到国外某些站点会非常卡，甚至无法连接，例如访问github非常慢，有时候会无法连接上，但是我们可以通过科学上网并且设置代理来使用这些工具。 git 如果使用github官方仓库，git下载是非常慢的，当然国内有些替代的仓库可供选择（coding &amp;amp;&amp;amp; gitee)，但是github优秀的资源相当多，所以如果git clone这些资源太">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于web开发常见的工具proxy设置">
+<meta property="og:url" content="https://socalledPF.github.io/2017/11/07/关于web开发常见的工具proxy设置/index.html">
 <meta property="og:site_name" content="潘烽的个人博客">
+<meta property="og:description" content="前言 众所周知，由于国内互联网政策，国内网络连接到国外某些站点会非常卡，甚至无法连接，例如访问github非常慢，有时候会无法连接上，但是我们可以通过科学上网并且设置代理来使用这些工具。 git 如果使用github官方仓库，git下载是非常慢的，当然国内有些替代的仓库可供选择（coding &amp;amp;&amp;amp; gitee)，但是github优秀的资源相当多，所以如果git clone这些资源太">
 <meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2017-11-07T05:47:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="潘烽的个人博客">
+<meta name="twitter:title" content="关于web开发常见的工具proxy设置">
+<meta name="twitter:description" content="前言 众所周知，由于国内互联网政策，国内网络连接到国外某些站点会非常卡，甚至无法连接，例如访问github非常慢，有时候会无法连接上，但是我们可以通过科学上网并且设置代理来使用这些工具。 git 如果使用github官方仓库，git下载是非常慢的，当然国内有些替代的仓库可供选择（coding &amp;amp;&amp;amp; gitee)，但是github优秀的资源相当多，所以如果git clone这些资源太">
   
     <link rel="alternative" href="/atom.xml" title="潘烽的个人博客" type="application/atom+xml">
   
@@ -146,157 +150,130 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-关于web开发常见的工具proxy设置" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      关于web开发常见的工具proxy设置
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/07/关于web开发常见的工具proxy设置/" class="archive-article-date">
+
+        
+        <a href="/2017/11/07/关于web开发常见的工具proxy设置/" class="archive-article-date">
   	<time datetime="2017-11-07T05:09:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-07</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/07/关于web开发常见的工具proxy设置/">关于web开发常见的工具proxy设置</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p> 众所周知，由于国内互联网政策，国内网络连接到国外某些站点会非常卡，甚至无法连接，例如访问github非常慢，有时候会无法连接上，但是我们可以通过科学上网并且设置代理来使用这些工具。</p>
+<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><p> 如果使用github官方仓库，git下载是非常慢的，当然国内有些替代的仓库可供选择（coding &amp;&amp; gitee)，但是github优秀的资源相当多，所以如果git clone这些资源太慢无疑太让我们这些开发者抓狂了。</p>
+<p> 设置代理：</p>
+<p> <code>git config --global http.proxy &#39;socks5://127.0.0.1:1080&#39;</code></p>
+<p> 取消代理：<br> <code>git config --global --unset http.proxy</code></p>
+<h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><ol>
+<li>npm 可以通过 <code>npm config set registry &lt;registry url&gt;</code>，来设置仓库地址，国内常用的是淘宝镜像，</li>
+</ol>
+<p><code>npm config set registry registry.npm.taobao.org</code></p>
+<h2 id="brew"><a href="#brew" class="headerlink" title="brew"></a>brew</h2><ol>
+<li>选择国内镜像（镜像也有奔溃的时候）<a href="https://lug.ustc.edu.cn/wiki/mirrors/help/brew.git" target="_blank" rel="external">链接</a></li>
+<li>设置curl代理 ,创建<code>~/.curlrc</code>，在此文件写入<br><code>socks5 = &quot;127.0.0.1:1080&quot;</code></li>
+</ol>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://socalledPF.github.io/2017/11/07/关于web开发常见的工具proxy设置/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/01/web中的缓存策略/" class="archive-article-date">
-  	<time datetime="2017-09-01T15:48:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-01</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/01/web中的缓存策略/">web中的缓存策略</a>
-    </h1>
+  
+    <a href="/2017/09/01/web中的缓存策略/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">web中的缓存策略</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/08/修复ubuntu引导/" class="archive-article-date">
-  	<time datetime="2017-08-07T16:36:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/08/修复ubuntu引导/">修复ubuntu引导</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/01/web前端开发心得/" class="archive-article-date">
-  	<time datetime="2017-07-01T06:05:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/01/web前端开发心得/">web前端开发心得</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/01/hello-world/" class="archive-article-date">
-  	<time datetime="2017-06-01T13:27:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/01/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -319,8 +296,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
