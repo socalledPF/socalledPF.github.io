@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="潘烽的个人博客">
 <meta property="og:description" content="windows和linux双系统，如果重新安装windows系统，会将grub引导给覆盖掉，所以linux系统无法被正常引导启动。 解决方案： 1.尝试用网上的easybcd添加linux引导项，无论手动添加路径还是自动搜索，都无法顺利引导。 2.尝试制作ubuntu启动盘，然后try ubuntu模式下安装boot-repair，经过一段时间后提示成功，重启重新看到grub引导界面。 3.可以在">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2017-08-07T16:43:09.000Z">
+<meta property="og:updated_time" content="2017-11-28T14:27:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="修复ubuntu引导">
 <meta name="twitter:description" content="windows和linux双系统，如果重新安装windows系统，会将grub引导给覆盖掉，所以linux系统无法被正常引导启动。 解决方案： 1.尝试用网上的easybcd添加linux引导项，无论手动添加路径还是自动搜索，都无法顺利引导。 2.尝试制作ubuntu启动盘，然后try ubuntu模式下安装boot-repair，经过一段时间后提示成功，重启重新看到grub引导界面。 3.可以在">
@@ -175,6 +175,7 @@
 <p>1.尝试用网上的easybcd添加linux引导项，无论手动添加路径还是自动搜索，都无法顺利引导。</p>
 <p>2.尝试制作ubuntu启动盘，然后try ubuntu模式下安装boot-repair，经过一段时间后提示成功，重启重新看到grub引导界面。</p>
 <p>3.可以在命令行用grub-install，猜测可行，具体待验证。</p>
+<p>注： 在公司遇到一种情况，同事的双系统电脑开机卡在grub引导页面，一开始尝试ubuntu liveCD try ubuntu模式修复，发现修复不了（抓狂，明明屡试不爽），后来发现她的linux系统被某些数据覆盖掉了，就只剩下一个windows系统，后来直接用winPE修复了windows的引导，然后得在bios下面更改下启动顺序，不然默认grub启动还是默认启动不了windows。</p>
 
       
 
