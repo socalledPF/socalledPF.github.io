@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://socalledPF.github.io">
-  <title>潘烽的个人博客</title>
+  <title>Archives: 2018/2 | 潘烽的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="潘烽的个人博客">
-<meta property="og:url" content="https://socalledPF.github.io/index.html">
+<meta property="og:url" content="https://socalledPF.github.io/archives/2018/02/index.html">
 <meta property="og:site_name" content="潘烽的个人博客">
 <meta property="og:locale" content="zh">
 <meta name="twitter:card" content="summary">
@@ -148,333 +148,47 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-碎片trick-md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/27/碎片trick-md/">碎片trick</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/27/碎片trick-md/" class="archive-article-date">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/02/27/碎片trick-md/" class="archive-article-date">
   	<time datetime="2018-02-27T15:01:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-27</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本文会将平时遇到的一些小的碎片化的trick整理起来</p>
-<h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2><ul>
-<li>mac中 设置nginx开机自启动</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /usr/<span class="built_in">local</span>/opt/nginx/*.plist /Library/LaunchDaemons</span><br><span class="line">sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist</span><br></pre></td></tr></table></figure>
-<hr>
-<p><em>本文将持续更新</em></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/27/碎片trick-md/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-关于web开发常见的工具proxy设置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/07/关于web开发常见的工具proxy设置/">关于web开发常见的工具proxy设置</a>
+      <a class="archive-article-title" href="/2018/02/27/碎片trick-md/">碎片trick</a>
     </h1>
   
 
-        
-        <a href="/2017/11/07/关于web开发常见的工具proxy设置/" class="archive-article-date">
-  	<time datetime="2017-11-07T05:09:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p> 众所周知，由于国内互联网政策，国内网络连接到国外某些站点会非常卡，甚至无法连接，例如访问github非常慢，有时候会无法连接上，但是我们可以通过科学上网并且设置代理来使用这些工具。</p>
-<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><p> 如果使用github官方仓库，git下载是非常慢的，当然国内有些替代的仓库可供选择（coding &amp;&amp; gitee)，但是github优秀的资源相当多，所以如果git clone这些资源太慢无疑太让我们这些开发者抓狂了。</p>
-<p> 设置代理：</p>
-<p> <code>git config --global http.proxy &#39;socks5://127.0.0.1:1080&#39;</code></p>
-<p> 取消代理：<br> <code>git config --global --unset http.proxy</code></p>
-<h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><ol>
-<li>npm 可以通过 <code>npm config set registry &lt;registry url&gt;</code>，来设置仓库地址，国内常用的是淘宝镜像，</li>
-</ol>
-<p><code>npm config set registry registry.npm.taobao.org</code></p>
-<h2 id="brew"><a href="#brew" class="headerlink" title="brew"></a>brew</h2><ol>
-<li>选择国内镜像（镜像也有奔溃的时候）<a href="https://lug.ustc.edu.cn/wiki/mirrors/help/brew.git" target="_blank" rel="noopener">链接</a></li>
-<li>设置curl代理 ,创建<code>~/.curlrc</code>，在此文件写入<br><code>socks5 = &quot;127.0.0.1:1080&quot;</code></li>
-</ol>
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/07/关于web开发常见的工具proxy设置/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-
-
-
   
-    <article id="post-web中的缓存策略" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/01/web中的缓存策略/">web中的缓存策略</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/01/web中的缓存策略/" class="archive-article-date">
-  	<time datetime="2017-09-01T15:48:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>目的为了增强用户体验，减少服务器压力。所以设置缓存后，用户浏览一次网站后再次浏览就会使用浏览器缓存大大提升访问速度，而且减少了对服务器的请求。</p>
-<ol>
-<li><p>服务器端设置缓存，nginx配置开启压缩gzip，这样减少请求文件大小，从而减少请求时间。</p>
-</li>
-<li><p>web前端html中对css，js，图片的引用要加上版本号，这样保证更新的版本后，浏览器会请求最新的文件，若更新文件后，文件名不更改，同时服务器端设置很长时间的缓存，那么导致客户端浏览网页不能及时更新到最新版本。</p>
-</li>
-</ol>
-<p>我用的是<code>gulp-rev-append</code>插件，具体在文件名后面加上？rev=@@hash，执行一次gulp命令后，只要对应的文件有变化，hash值就回更改。</p>
-<ol>
-<li>网站中使用的一些库，如果用cdn加载之前最好测试一下速度，对于国外的cdn源国内访问速度普遍较慢，所以放在本地加载速度更佳快。</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/01/web中的缓存策略/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-修复ubuntu引导" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/08/修复ubuntu引导/">修复ubuntu引导</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/08/修复ubuntu引导/" class="archive-article-date">
-  	<time datetime="2017-08-07T16:36:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>windows和linux双系统，如果重新安装windows系统，会将grub引导给覆盖掉，所以linux系统无法被正常引导启动。</p>
-<p>解决方案：</p>
-<p>1.尝试用网上的easybcd添加linux引导项，无论手动添加路径还是自动搜索，都无法顺利引导。</p>
-<p>2.尝试制作ubuntu启动盘，然后try ubuntu模式下安装boot-repair，经过一段时间后提示成功，重启重新看到grub引导界面。</p>
-<p>3.可以在命令行用grub-install，猜测可行，具体待验证。</p>
-<p>注： 在公司遇到一种情况，同事的双系统电脑开机卡在grub引导页面，一开始尝试ubuntu liveCD try ubuntu模式修复，发现修复不了（抓狂，明明屡试不爽），后来发现她的linux系统被某些数据覆盖掉了，就只剩下一个windows系统，后来直接用winPE修复了windows的引导，然后得在bios下面更改下启动顺序，不然默认grub启动还是默认启动不了windows。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/08/修复ubuntu引导/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-web前端开发心得" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/01/web前端开发心得/">web前端开发心得</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/01/web前端开发心得/" class="archive-article-date">
-  	<time datetime="2017-07-01T06:05:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h3>项目流程</h3><br>web前端开发流程，根据公司的规模不同，会稍有差异。以我公司为例，一般情况如下：<br>1.产品经理提出需求，画出原型图，ui会根据原型图和需求设计界面和交互，定稿后给前端设计师进行网站的设计，当然一般html,css,js都是一个人完成，分工明确的html，css和js会分开，这里会涉及到协同开发。<br>2.前端工程师根据ui设计图和切图进行页面布局，设计交互，也需要和后台工程师沟通需要提供哪些接口，以满足需求。<br>3.产品做完之后进行测试，反复迭代。<br>4.书写文档和总结。<p></p>
-<p></p><h3>开发时候的注意点</h3><br>1.首先需求阶段要多参与讨论，有些产品经理不太懂技术，所以设计的原型不利于工程师执行，还有设计的ui稿需要斟酌，因为最终是由前端工程师去写代码完成的，前期的沟通非常重要。<br>2.前端工程师与后台工程师之前的任务也需要明确，因为有些业务前端完成会比较坑，比如验证某些安全性的东西。<br>3.前端工程师与前端工程师之间的合作，做好用git 版本管理吧，如果都是在本地修改好，传到服务器，这样的话代码容易混乱，后期会很不方便管理。还有就是万一你要修改他的代码，发现自动化工具都不一样，不利于项目管理。<br>4.写代码的时候要注意开始对于项目的规划，当然一开始基于当前的需求，项目的结构要合理设计，不然后期代码和项目结构会很混乱，不利于维护。而且要考虑到后期的扩展，无论代码和项目结构，都要考虑后期的可扩展性。<br>5.项目实施的时候，尽量模块化，抽象功能，便于扩展和后期维护。<p></p>
-<p><em>本文会持续更新</em></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/01/web前端开发心得/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/01/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/01/hello-world/" class="archive-article-date">
-  	<time datetime="2017-06-01T13:27:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>时光飞逝，真的能感觉到记忆力的衰退，清楚的记得小学里几分钟就能背诵一篇课文。</p>
-<p>很久之前就想倒腾一个个人博客，记录自己做开发过程中的点滴，奈何自己是一个重度拖延症患者。</p>
-<p>真的非常感谢这个世界上乐于分享的人，我这个博客才能顺利的搭建起来，所以我也想尽自己的一份力，将自己的一些积累和见解分享出来。</p>
-<p>Hello，World!</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/01/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-  
 
 
           </div>
@@ -496,9 +210,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
