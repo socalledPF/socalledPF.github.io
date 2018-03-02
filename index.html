@@ -173,6 +173,10 @@
 <li>mac中 设置nginx开机自启动</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /usr/<span class="built_in">local</span>/opt/nginx/*.plist /Library/LaunchDaemons</span><br><span class="line">sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist</span><br></pre></td></tr></table></figure>
+<h2 id="默认python3解释器"><a href="#默认python3解释器" class="headerlink" title="默认python3解释器"></a>默认python3解释器</h2><ul>
+<li>mac 或者 linux 系统中，如果要默认python为python3,可以通过软链接实现</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/<span class="built_in">local</span>/bin/python3 /usr/<span class="built_in">local</span>/bin/python</span><br></pre></td></tr></table></figure>
 <hr>
 <p><em>本文将持续更新</em></p>
 
