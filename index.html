@@ -190,6 +190,9 @@ ga('send', 'pageview');
 <li>mac系统中，如果要默认python为python3,首先找到python3在哪里，然后创建软链接实现</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/<span class="built_in">local</span>/bin/python3 /usr/<span class="built_in">local</span>/bin/python</span><br></pre></td></tr></table></figure>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><ul>
+<li>ssh 无密码连接，将本机的ssh的公钥放置到服务器的 <code>~/.ssh/authorized_keys</code>文件中，该文件如果设置过高的权限将不会生效。</li>
+</ul>
 <hr>
 <p><em>本文将持续更新</em></p>
 
@@ -239,19 +242,21 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p> 众所周知，由于国内互联网政策，国内网络连接到国外某些站点会非常卡，甚至无法连接，例如访问github非常慢，有时候会无法连接上，但是我们可以通过科学上网并且设置代理来使用这些工具。</p>
-<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><p> 如果使用github官方仓库，git下载是非常慢的，当然国内有些替代的仓库可供选择（coding &amp;&amp; gitee)，但是github优秀的资源相当多，所以如果git clone这些资源太慢无疑太让我们这些开发者抓狂了。</p>
-<p> 设置代理：</p>
-<p> <code>git config --global http.proxy &#39;socks5://127.0.0.1:1080&#39;</code></p>
-<p> 取消代理：<br> <code>git config --global --unset http.proxy</code></p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>众所周知，由于国内互联网政策，国内网络连接到国外某些站点会非常卡，甚至无法连接，例如访问 github 非常慢，有时候会无法连接上，但是我们可以通过科学上网并且设置代理来使用这些工具。</p>
+<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><p>如果使用 github 官方仓库，git 下载是非常慢的，当然国内有些替代的仓库可供选择（coding &amp;&amp; gitee)，但是 github 优秀的资源相当多，所以如果 git clone 这些资源太慢无疑太让我们这些开发者抓狂了。</p>
+<p>设置代理：</p>
+<p><code>git config --global http.proxy &#39;socks5://127.0.0.1:1080&#39;</code></p>
+<p>取消代理：<br><code>git config --global --unset http.proxy</code></p>
 <h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><ol>
 <li>npm 可以通过 <code>npm config set registry &lt;registry url&gt;</code>，来设置仓库地址，国内常用的是淘宝镜像，</li>
 </ol>
 <p><code>npm config set registry registry.npm.taobao.org</code></p>
-<h2 id="brew"><a href="#brew" class="headerlink" title="brew"></a>brew</h2><ol>
-<li>选择国内镜像（镜像也有奔溃的时候）<a href="https://lug.ustc.edu.cn/wiki/mirrors/help/brew.git" target="_blank" rel="noopener">链接</a></li>
-<li>设置curl代理 ,创建<code>~/.curlrc</code>，在此文件写入<br><code>socks5 = &quot;127.0.0.1:1080&quot;</code></li>
-</ol>
+<h2 id="brew"><a href="#brew" class="headerlink" title="brew"></a>brew</h2><ul>
+<li><p>方法一：选择国内镜像（镜像也有奔溃的时候）<a href="https://lug.ustc.edu.cn/wiki/mirrors/help/brew.git" target="_blank" rel="noopener">链接</a></p>
+</li>
+<li><p>方法二：设置 curl 代理 ,创建<code>~/.curlrc</code>，在此文件写入<br><code>socks5 = &quot;127.0.0.1:1080&quot;</code></p>
+</li>
+</ul>
 
       
 
