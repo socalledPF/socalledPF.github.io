@@ -193,6 +193,13 @@ ga('send', 'pageview');
 <h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><ul>
 <li>ssh 无密码连接，将本机的ssh的公钥放置到服务器的 <code>~/.ssh/authorized_keys</code>文件中，该文件如果设置过高的权限将不会生效。</li>
 </ul>
+<h2 id="archlinux-设置ss开机自启动运行"><a href="#archlinux-设置ss开机自启动运行" class="headerlink" title="archlinux 设置ss开机自启动运行"></a>archlinux 设置ss开机自启动运行</h2><ol>
+<li><p><code>systemd</code>启动一个自定义的unit。<br>用户的units是放在<code>/etc/systemd/system/</code>目录下，创建一个<code>shadowsocks-local.service</code>文件，配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Shadowsocks local</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">ExecStart=/usr/bin/ss-local ...</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=nulti-user.target</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>shell脚本放在<code>/etc/profile.d/</code>目录下</p>
+</li>
+</ol>
 <hr>
 <p><em>本文将持续更新</em></p>
 
