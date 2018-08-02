@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="潘烽的个人博客">
 <meta property="og:description" content="前言众所周知，由于国内互联网政策，国内网络连接到国外某些站点会非常卡，甚至无法连接，例如访问 github 非常慢，有时候会无法连接上，但是我们可以通过科学上网并且设置代理来使用这些工具。 git如果使用 github 官方仓库，git 下载是非常慢的，当然国内有些替代的仓库可供选择（coding &amp;amp;&amp;amp; gitee)，但是 github 优秀的资源相当多，所以如果 git clon">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-03-28T16:01:38.217Z">
+<meta property="og:updated_time" content="2018-08-02T08:16:18.450Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于web开发常见的工具proxy设置">
 <meta name="twitter:description" content="前言众所周知，由于国内互联网政策，国内网络连接到国外某些站点会非常卡，甚至无法连接，例如访问 github 非常慢，有时候会无法连接上，但是我们可以通过科学上网并且设置代理来使用这些工具。 git如果使用 github 官方仓库，git 下载是非常慢的，当然国内有些替代的仓库可供选择（coding &amp;amp;&amp;amp; gitee)，但是 github 优秀的资源相当多，所以如果 git clon">
@@ -199,6 +199,18 @@ ga('send', 'pageview');
 </li>
 </ul>
 <h2 id="composer"><a href="#composer" class="headerlink" title="composer"></a>composer</h2><p><a href="https://pkg.phpcomposer.com/" target="_blank" rel="noopener">镜像</a></p>
+<h2 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h2><ol>
+<li><p>安装某个python模块指定安装源。</p>
+<blockquote>
+<p>pip -i <a href="http://pypi.douban.com/simple" target="_blank" rel="noopener">http://pypi.douban.com/simple</a> install flask </p>
+</blockquote>
+</li>
+<li><p>修改<code>~/.config/pip/pip.conf</code>(Linux or Macos), <code>%APPDATA%\pip\pip.ini</code>(Windows)。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[global] </span><br><span class="line">index-url = https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>pip 和 pip3 并存时，只需修改 <code>~/.pip/pip.conf</code>。</p>
+</li>
+</ol>
 
       
 
