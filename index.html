@@ -161,6 +161,212 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Vue使用的注意事项" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="组件通信相关"><a href="#组件通信相关" class="headerlink" title="组件通信相关"></a>组件通信相关</h2><ol>
+<li>当父组件在生命周期钩子中异步设置props的时候，子组件在创建的时候不能保证能获取到props，所以需要在子组件外包裹一个曾v-if=”props” </li>
+</ol>
+<h2 id="数据绑定相关"><a href="#数据绑定相关" class="headerlink" title="数据绑定相关"></a>数据绑定相关</h2><ol>
+<li>绑定数据的时候，必须在data中进行初始化</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/06/Vue使用的注意事项/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-JavaScript-自动分号相关" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/26/JavaScript-自动分号相关/">JavaScript 自动分号机制</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/26/JavaScript-自动分号相关/" class="archive-article-date">
+  	<time datetime="2018-09-26T03:12:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="ASI"><a href="#ASI" class="headerlink" title="ASI"></a>ASI</h2><p>Javascript中有个ASI(automatic semicolon insertion)机制， 所以分号不是强制使用的。</p>
+<p>下面一些语句必须以分号结束：</p>
+<ul>
+<li>空语句</li>
+<li><code>let</code> <code>const</code> 变量语句</li>
+<li><code>import</code> <code>export</code> 模块申明语句</li>
+<li>表达申明语句</li>
+<li><code>debugger</code></li>
+<li><code>continue</code> <code>break</code> <code>throw</code></li>
+<li><code>return</code></li>
+</ul>
+<p>ECMA规范提到的<a href="https://tc39.github.io/ecma262/#sec-rules-of-automatic-semicolon-insertion" target="_blank" rel="noopener">分号插入的三条准则</a></p>
+<ol>
+<li><p>分号会被插入到行终止符或者”}”前面 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>) &#123;<span class="built_in">console</span>.log(<span class="number">1</span>)&#125; <span class="built_in">console</span>.log(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 被asi转化成</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>) &#123;<span class="built_in">console</span>.log(<span class="number">1</span>);&#125; <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testASI</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> </span><br><span class="line">    &#123;<span class="attr">obj</span>: <span class="string">'test asi'</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 因为js的asi机制，所以会在return后面加<code>;</code><br> 所以等同于</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testASI</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span>; </span><br><span class="line">    &#123;<span class="attr">obj</span>: <span class="string">'test asi'</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/26/JavaScript-自动分号相关/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-babel应用与配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/15/babel应用与配置/">babel应用与配置</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/15/babel应用与配置/" class="archive-article-date">
+  	<time datetime="2018-09-15T01:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是babel？"><a href="#什么是babel？" class="headerlink" title="什么是babel？"></a>什么是babel？</h2><p>babel是一个JavaScript编译器，将ES2015+的代码编译成向下兼容的代码，使这些代码可以运行在老的浏览器或者环境中。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/15/babel应用与配置/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-记一次异步bug解决案例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/14/记一次异步bug解决案例/">记一次异步bug解决案例</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/14/记一次异步bug解决案例/" class="archive-article-date">
+  	<time datetime="2018-08-14T02:05:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近看了一个设计模式名为Singleton设计模式，这个设计模式相较于其余的设计模式比较简单。但是细节上有很多地方要考虑，比如多线程的情况下要考虑。这是我想起了我在做微信公众号开发的时候，也遇到script异步加载时序未控制好导致bug的经历。</p>
+<h2 id="微信公众号开发之JSSDK"><a href="#微信公众号开发之JSSDK" class="headerlink" title="微信公众号开发之JSSDK"></a>微信公众号开发之JSSDK</h2><p>查看微信开发文档，就会发现要使用微信的JSAPI，就必须先配置JSSDK，所以时序上必须保证这个先完成的情况下，才能继续调用JSAPI。</p>
+<p>实际开发的时候，引用script的顺序如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;script src=<span class="string">"path to jssdk"</span>&gt; &lt;/script&gt;</span><br><span class="line">&lt;script&gt; </span><br><span class="line">  <span class="comment">// set jssdk config</span></span><br><span class="line">  <span class="comment">// invoke js api</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>测试的时候，一切都可以调用，没有问题，实际上线的时候，在大量用户并发的情况下，出现了意外情况，很多用户根本没法使用产品，排查下来发现这个情况是请求后台的api延迟导致的，在jssdk还没配置的情况下，其余script异步加载，导致先执行，这个时序就有悖于当初的设计。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>因为前后端分离，所以通过ajax发送请求，因为jQuery请求默认是异步的，所以得设置成同步。在这个请求结束的时候，才能继续执行下面的脚本。</p>
+<h2 id="另一个想法"><a href="#另一个想法" class="headerlink" title="另一个想法"></a>另一个想法</h2><p>根据加载顺序，将设置jssdk的script放在网页的最前面，这样在这个请求位完成的时候，可以阻塞页面的加载。（等待验证）</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/14/记一次异步bug解决案例/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-碎片trick-md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -262,6 +468,7 @@ ga('send', 'pageview');
 <li><p>方法一：选择国内镜像（镜像也有奔溃的时候）<a href="https://lug.ustc.edu.cn/wiki/mirrors/help/brew.git" target="_blank" rel="noopener">链接</a></p>
 </li>
 <li><p>方法二：设置 curl 代理 ,创建<code>~/.curlrc</code>，在此文件写入<br><code>socks5 = &quot;127.0.0.1:1080&quot;</code></p>
+<p><em>brew cask暂时无法加速</em></p>
 </li>
 </ul>
 <h2 id="composer"><a href="#composer" class="headerlink" title="composer"></a>composer</h2><p><a href="https://pkg.phpcomposer.com/" target="_blank" rel="noopener">镜像</a></p>
@@ -415,107 +622,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-web前端开发心得" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/01/web前端开发心得/">web前端开发心得</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/01/web前端开发心得/" class="archive-article-date">
-  	<time datetime="2017-07-01T06:05:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h3>项目流程</h3><br>web前端开发流程，根据公司的规模不同，会稍有差异。以我公司为例，一般情况如下：<br>1.产品经理提出需求，画出原型图，ui会根据原型图和需求设计界面和交互，定稿后给前端设计师进行网站的设计，当然一般html,css,js都是一个人完成，分工明确的html，css和js会分开，这里会涉及到协同开发。<br>2.前端工程师根据ui设计图和切图进行页面布局，设计交互，也需要和后台工程师沟通需要提供哪些接口，以满足需求。<br>3.产品做完之后进行测试，反复迭代。<br>4.书写文档和总结。<p></p>
-<p></p><h3>开发时候的注意点</h3><br>1.首先需求阶段要多参与讨论，有些产品经理不太懂技术，所以设计的原型不利于工程师执行，还有设计的ui稿需要斟酌，因为最终是由前端工程师去写代码完成的，前期的沟通非常重要(个人觉得小公司，特别是只有一个前端的，想要快速实现功能，可以将ui库告诉ui，让ui就用库的样式去设计，这样会节省很多时间，因为很多小公司ui不会注重组件的设计规范，每次设计都是不同的样式，对于前端而言尤为头疼，代码基本不能复用)。<br>2.前端工程师与后台工程师之前的任务也需要明确，因为有些业务前端完成会比较坑，比如验证某些安全性的东西。<br>3.前端工程师与前端工程师之间的合作，做好用git 版本管理吧，如果都是在本地修改好，传到服务器，这样的话代码容易混乱，后期会很不方便管理。还有就是万一你要修改他的代码，发现自动化工具都不一样，不利于项目管理。<br>4.写代码的时候要注意开始对于项目的规划，当然一开始基于当前的需求，项目的结构要合理设计，不然后期代码和项目结构会很混乱，不利于维护。而且要考虑到后期的扩展，无论代码和项目结构，都要考虑后期的可扩展性。<br>5.项目实施的时候，尽量模块化，抽象功能，便于扩展和后期维护。<p></p>
-<p></p><h3>对于前端工程师的思考</h3><br>1.与产品和ui沟通出合理的实施方案是十分必要的。<br>2.ui设计的时候需要遵循设计规范，设计可重复使用的组件，这样web前端就可以写出可复用的组件，代码模块化和可维护性的基础。<br>3.必须深挖产品的需求，做到预判需求和产品可扩展性。<br>4.当你工作的时候，发现需求有问题的时候，最不应该的是妥协，当后台妥协的时候，对后台的接口也不能妥协，说明情况，如果发生问题的话责任方就不在于你，比如马甲包，需求本来就不明确的情况下，通过大量复制粘贴之后，当新的需求出现，问题会被无限放大。千万不能听妈妈小时候教育你的话，要忍耐，坚持下就过去了，这可不是短跑比赛，这种“坚持”会带来非常大的麻烦，停下来，搞清楚需求，根据需求重构是最明智的，你的专业不能屈服于产品的压力下。<br>5.后台接口的设计会直接影响你的代码的架构。所以对于后台的接口，得在实施前进行约定。实施过程中发现问题在及时更改。<br><em>本文会持续更新</em><p></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/01/web前端开发心得/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/01/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/01/hello-world/" class="archive-article-date">
-  	<time datetime="2017-06-01T13:27:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>时光飞逝，真的能感觉到记忆力的衰退，清楚的记得小学里几分钟就能背诵一篇课文。</p>
-<p>很久之前就想倒腾一个个人博客，记录自己做开发过程中的点滴，奈何自己是一个重度拖延症患者。</p>
-<p>真的非常感谢这个世界上乐于分享的人，我这个博客才能顺利的搭建起来，所以我也想尽自己的一份力，将自己的一些积累和见解分享出来。</p>
-<p>Hello，World!</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/01/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
 
 
@@ -526,7 +632,7 @@ ga('send', 'pageview');
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 潘烽
+    		&copy; 2019 潘烽
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
