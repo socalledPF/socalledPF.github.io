@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://socalledPF.github.io">
-  <title>Archives: 2018 | 潘烽的个人博客</title>
+  <title>JavaScript 自动分号机制 | 潘烽的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="潘烽的个人博客">
-<meta property="og:url" content="https://socalledPF.github.io/archives/2018/index.html">
+  <meta name="description" content="组件通信相关 当父组件在生命周期钩子中异步设置props的时候，子组件在创建的时候不能保证能获取到props，所以需要在子组件外包裹一个曾v-if=”props”   数据绑定相关 绑定数据的时候，必须在data中进行初始化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 自动分号机制">
+<meta property="og:url" content="https://socalledPF.github.io/2018/10/26/Vue使用的注意事项/index.html">
 <meta property="og:site_name" content="潘烽的个人博客">
+<meta property="og:description" content="组件通信相关 当父组件在生命周期钩子中异步设置props的时候，子组件在创建的时候不能保证能获取到props，所以需要在子组件外包裹一个曾v-if=”props”   数据绑定相关 绑定数据的时候，必须在data中进行初始化">
 <meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-03-18T15:33:09.652Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="潘烽的个人博客">
+<meta name="twitter:title" content="JavaScript 自动分号机制">
+<meta name="twitter:description" content="组件通信相关 当父组件在生命周期钩子中异步设置props的时候，子组件在创建的时候不能保证能获取到props，所以需要在子组件外包裹一个曾v-if=”props”   数据绑定相关 绑定数据的时候，必须在data中进行初始化">
   
     <link rel="alternative" href="/atom.xml" title="潘烽的个人博客" type="application/atom+xml">
   
@@ -159,130 +163,123 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Vue使用的注意事项" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      JavaScript 自动分号机制
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/26/Vue使用的注意事项/" class="archive-article-date">
+
+        
+        <a href="/2018/10/26/Vue使用的注意事项/" class="archive-article-date">
   	<time datetime="2018-10-26T11:12:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-26</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/26/Vue使用的注意事项/">JavaScript 自动分号机制</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="组件通信相关"><a href="#组件通信相关" class="headerlink" title="组件通信相关"></a>组件通信相关</h2><ol>
+<li>当父组件在生命周期钩子中异步设置props的时候，子组件在创建的时候不能保证能获取到props，所以需要在子组件外包裹一个曾v-if=”props” </li>
+</ol>
+<h2 id="数据绑定相关"><a href="#数据绑定相关" class="headerlink" title="数据绑定相关"></a>数据绑定相关</h2><ol>
+<li>绑定数据的时候，必须在data中进行初始化</li>
+</ol>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://socalledPF.github.io/2018/10/26/Vue使用的注意事项/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/26/JavaScript-自动分号相关/" class="archive-article-date">
-  	<time datetime="2018-09-26T03:12:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-26</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/26/JavaScript-自动分号相关/">JavaScript 自动分号机制</a>
-    </h1>
+  
+    <a href="/2018/09/26/JavaScript-自动分号相关/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript 自动分号机制</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/14/记一次异步bug解决案例/" class="archive-article-date">
-  	<time datetime="2018-08-14T02:05:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/14/记一次异步bug解决案例/">记一次异步bug解决案例</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/27/碎片trick-md/" class="archive-article-date">
-  	<time datetime="2018-02-27T15:01:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/27/碎片trick-md/">碎片trick</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -305,8 +302,8 @@ ga('send', 'pageview');
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
