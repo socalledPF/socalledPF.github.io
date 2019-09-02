@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://socalledPF.github.io">
-  <title>潘烽的个人博客</title>
+  <title>socalledPF的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="潘烽的个人博客">
+<meta property="og:title" content="socalledPF的个人博客">
 <meta property="og:url" content="https://socalledPF.github.io/index.html">
-<meta property="og:site_name" content="潘烽的个人博客">
+<meta property="og:site_name" content="socalledPF的个人博客">
 <meta property="og:locale" content="zh">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="潘烽的个人博客">
+<meta name="twitter:title" content="socalledPF的个人博客">
   
-    <link rel="alternative" href="/atom.xml" title="潘烽的个人博客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="socalledPF的个人博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -59,7 +59,7 @@ ga('send', 'pageview');
 			<img src="null" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">潘烽</a></h1>
+		  <h1 class="header-author"><a href="/">PF</a></h1>
 		</hgroup>
 		
 
@@ -115,7 +115,7 @@ ga('send', 'pageview');
 				<img src="null" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">潘烽</h1>
+			  <h1 class="header-author js-header-author">PF</h1>
 			</hgroup>
 			
 			
@@ -182,10 +182,28 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="组件通信相关"><a href="#组件通信相关" class="headerlink" title="组件通信相关"></a>组件通信相关</h2><ol>
-<li>当父组件在生命周期钩子中异步设置props的时候，子组件在创建的时候不能保证能获取到props，所以需要在子组件外包裹一个曾v-if=”props” </li>
+<li><p>当父组件在生命周期钩子中异步设置props的时候，子组件在创建的时候不能保证能获取到props，所以需要在子组件外包裹一层v-if=”props” </p>
+</li>
+<li><p>在最外层App.vue组件中可以使用注册event bus ，并作事件监听，然后其组件可以emit event到这个组件中。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// App.vue</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line"></span><br><span class="line">  created() &#123;</span><br><span class="line">    <span class="keyword">this</span>.$on(<span class="string">'event-name1'</span>, callback1)</span><br><span class="line">    <span class="keyword">this</span>.$on(<span class="string">'event-name2'</span>, callback2) <span class="comment">// 监听事件</span></span><br><span class="line">    <span class="built_in">window</span>.getApp = <span class="keyword">this</span> <span class="comment">// 注册event bus</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 然后在其余组件中可以直接emit事件出发event bus中的监听事件执行回调</span></span><br><span class="line"><span class="comment">// ComponentTest.vue</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  methods: &#123;</span><br><span class="line">    sendMsg() &#123;</span><br><span class="line">      <span class="built_in">window</span>.getApp.$emit(<span class="string">'event-name1'</span>, someData)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
+<p>这种组件通信方式针对业务逻辑简单的情况非常有用，可以不用引入vuex。</p>
+<ol>
+<li>vue的prop是单向数据流传递，子组件不可以v-model本身的prop，也就是说父组件可以修改prop传递给子组件，而反之不成立，因为如果子组件修改了父组件的状态，这样整个app的数据流将会很难理解。</li>
+</ol>
+<p>当然可以将prop的值作为自组件本身的data状态值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  prop: &#123;</span><br><span class="line">    inputValue: &#123;</span><br><span class="line">      type: <span class="built_in">String</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      userInput: <span class="keyword">this</span>.inputValue</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>也可以使用computed的值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  prop: &#123;</span><br><span class="line">    inputValue: &#123;</span><br><span class="line">      type: <span class="built_in">String</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    inputValueUpperCase() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.inputValue.toUpperCase();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="数据绑定相关"><a href="#数据绑定相关" class="headerlink" title="数据绑定相关"></a>数据绑定相关</h2><ol>
 <li>绑定数据的时候，必须在data中进行初始化</li>
+</ol>
+<h2 id="团队合作相关"><a href="#团队合作相关" class="headerlink" title="团队合作相关"></a>团队合作相关</h2><ol>
+<li>Vue的配置尽可能有团队风格，并约定好，比如eslint和vue.conf.js</li>
+<li>在使用一些库的时候尽可能不去更改原有的api（等价封装），比如axios你可以创建实例去改配置，还有拦截器，没必要在axios上自己在封装一层promise用于各类请求api，这样多了一层学习成本和心智负担，而且没有这个必要，创建的实例还是会继承axios的方法。</li>
+<li>封装组件的时候，不要和使用库的api冲突</li>
+<li>公共样式也一样，不能冲突</li>
 </ol>
 
       
@@ -599,7 +617,7 @@ ga('send', 'pageview');
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 潘烽
+    		&copy; 2019 PF
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

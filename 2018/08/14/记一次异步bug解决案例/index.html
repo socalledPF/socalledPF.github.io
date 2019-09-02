@@ -6,13 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://socalledPF.github.io">
-  <title>记一次异步bug解决案例 | 潘烽的个人博客</title>
+  <title>记一次异步bug解决案例 | socalledPF的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="最近看了一个设计模式名为Singleton设计模式，这个设计模式相较于其余的设计模式比较简单。但是细节上有很多地方要考虑，比如多线程的情况下要考虑。这是我想起了我在做微信公众号开发的时候，也遇到script异步加载时序未控制好导致bug的经历。 微信公众号开发之JSSDK查看微信开发文档，就会发现要使用微信的JSAPI，就必须先配置JSSDK，所以时序上必须保证这个先完成的情况下，才能继续调用JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记一次异步bug解决案例">
 <meta property="og:url" content="https://socalledPF.github.io/2018/08/14/记一次异步bug解决案例/index.html">
-<meta property="og:site_name" content="潘烽的个人博客">
+<meta property="og:site_name" content="socalledPF的个人博客">
 <meta property="og:description" content="最近看了一个设计模式名为Singleton设计模式，这个设计模式相较于其余的设计模式比较简单。但是细节上有很多地方要考虑，比如多线程的情况下要考虑。这是我想起了我在做微信公众号开发的时候，也遇到script异步加载时序未控制好导致bug的经历。 微信公众号开发之JSSDK查看微信开发文档，就会发现要使用微信的JSAPI，就必须先配置JSSDK，所以时序上必须保证这个先完成的情况下，才能继续调用JS">
 <meta property="og:locale" content="zh">
 <meta property="og:updated_time" content="2018-10-20T05:46:07.673Z">
@@ -20,7 +20,7 @@
 <meta name="twitter:title" content="记一次异步bug解决案例">
 <meta name="twitter:description" content="最近看了一个设计模式名为Singleton设计模式，这个设计模式相较于其余的设计模式比较简单。但是细节上有很多地方要考虑，比如多线程的情况下要考虑。这是我想起了我在做微信公众号开发的时候，也遇到script异步加载时序未控制好导致bug的经历。 微信公众号开发之JSSDK查看微信开发文档，就会发现要使用微信的JSAPI，就必须先配置JSSDK，所以时序上必须保证这个先完成的情况下，才能继续调用JS">
   
-    <link rel="alternative" href="/atom.xml" title="潘烽的个人博客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="socalledPF的个人博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -63,7 +63,7 @@ ga('send', 'pageview');
 			<img src="null" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">潘烽</a></h1>
+		  <h1 class="header-author"><a href="/">PF</a></h1>
 		</hgroup>
 		
 
@@ -119,7 +119,7 @@ ga('send', 'pageview');
 				<img src="null" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">潘烽</h1>
+			  <h1 class="header-author js-header-author">PF</h1>
 			</hgroup>
 			
 			
@@ -298,7 +298,7 @@ ga('send', 'pageview');
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 潘烽
+    		&copy; 2019 PF
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
