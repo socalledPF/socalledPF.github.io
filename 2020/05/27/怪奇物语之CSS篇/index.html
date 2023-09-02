@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://socalledPF.github.io">
-  <title>Archives: 2017/8 | socalledPF的个人博客</title>
+  <title>怪奇物语之CSS篇 | socalledPF的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="socalledPF的个人博客">
-<meta property="og:url" content="https://socalledPF.github.io/archives/2017/08/index.html">
+  <meta name="description" content="前言本文将持续记录开发中遇到的各种奇形怪状的css问题 css 字体不底部对齐 比如展示 $20 这个价格 $和 20的字体大小一致，但是字体famliy不一致，$为PingFangSc字体，而20为Bebas字体ui设计这步为了强行让两个字符底部水平对齐，看数字的line-height 并不居中，偏下，价格符号也是往下挪了位置。这正好说明按照正常flex布局，价格符号必定相对数字位置偏上。 实际">
+<meta property="og:type" content="article">
+<meta property="og:title" content="怪奇物语之CSS篇">
+<meta property="og:url" content="https://socalledPF.github.io/2020/05/27/怪奇物语之CSS篇/index.html">
 <meta property="og:site_name" content="socalledPF的个人博客">
+<meta property="og:description" content="前言本文将持续记录开发中遇到的各种奇形怪状的css问题 css 字体不底部对齐 比如展示 $20 这个价格 $和 20的字体大小一致，但是字体famliy不一致，$为PingFangSc字体，而20为Bebas字体ui设计这步为了强行让两个字符底部水平对齐，看数字的line-height 并不居中，偏下，价格符号也是往下挪了位置。这正好说明按照正常flex布局，价格符号必定相对数字位置偏上。 实际">
 <meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2023-09-02T08:02:11.562Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="socalledPF的个人博客">
+<meta name="twitter:title" content="怪奇物语之CSS篇">
+<meta name="twitter:description" content="前言本文将持续记录开发中遇到的各种奇形怪状的css问题 css 字体不底部对齐 比如展示 $20 这个价格 $和 20的字体大小一致，但是字体famliy不一致，$为PingFangSc字体，而20为Bebas字体ui设计这步为了强行让两个字符底部水平对齐，看数字的line-height 并不居中，偏下，价格符号也是往下挪了位置。这正好说明按照正常flex布局，价格符号必定相对数字位置偏上。 实际">
   
     <link rel="alternative" href="/atom.xml" title="socalledPF的个人博客" type="application/atom+xml">
   
@@ -159,49 +163,136 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-怪奇物语之CSS篇" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/08/修复ubuntu引导/" class="archive-article-date">
-  	<time datetime="2017-08-07T16:36:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/08/修复ubuntu引导/">修复ubuntu引导</a>
+    <h1 class="article-title" itemprop="name">
+      怪奇物语之CSS篇
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2020/05/27/怪奇物语之CSS篇/" class="archive-article-date">
+  	<time datetime="2020-05-27T02:31:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本文将持续记录开发中遇到的各种奇形怪状的css问题</p>
+<h2 id="css-字体不底部对齐"><a href="#css-字体不底部对齐" class="headerlink" title="css 字体不底部对齐"></a>css 字体不底部对齐</h2><p> 比如展示 <code>$20</code> 这个价格</p>
+<p><code>$</code>和 <code>20</code>的字体大小一致，但是字体famliy不一致，<code>$</code>为PingFangSc字体，而<code>20</code>为<code>Bebas</code>字体<br>ui设计这步为了强行让两个字符底部水平对齐，看数字的line-height 并不居中，偏下，价格符号也是往下挪了位置。<br>这正好说明按照正常flex布局，价格符号必定相对数字位置偏上。</p>
+<p>实际效果如下连接</p>
+<h2 id="css-图片在某些机型无法撑满整个屏幕宽度"><a href="#css-图片在某些机型无法撑满整个屏幕宽度" class="headerlink" title="css 图片在某些机型无法撑满整个屏幕宽度"></a>css 图片在某些机型无法撑满整个屏幕宽度</h2><blockquote>
+<p>场景  一些活动页面整个背景切图，设置 <code>background-size： contain</code> 或者使用 img标签引入，设置img 宽度 <code>max-width: 100%</code> 皆会有兼容问题。</p>
+</blockquote>
+<p>原因是在大于切图像素的屏幕中，contain 并不会拉伸图片，所以导致整个背景并不会撑满整个屏幕宽度。 同样的 <code>max-width</code> 图片最多的像素小于屏幕宽度，也不会撑满整个屏幕。</p>
+<p>解决方案就是<code>background-size： cover</code> 或者<code>max-width</code> 改为 <code>width</code>，但是整个图片会有一定失真</p>
+<p>思考： 这就是活动页面大量切图的弊端，加速开发的同时兼容性不能做的很好，考虑使用svg图片。</p>
 
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://socalledPF.github.io/2020/05/27/怪奇物语之CSS篇/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2023/09/02/怪虫记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          怪虫记
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/03/26/webpack实践之老旧的java后台管理系统/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">webpack实践之老旧的java后台管理系统</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -224,8 +315,8 @@ ga('send', 'pageview');
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://socalledPF.github.io">
-  <title>潘烽的个人博客</title>
+  <title>webpack实践之老旧的java后台管理系统 | socalledPF的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用Vue的注意点组件通信相关 当父组件在生命周期钩子中异步设置props的时候，子组件在创建的时候不能保证能获取到props，所以需要在子组件外包裹一个曾v-if=”props”   数据绑定相关 绑定数据的时候，必须在data中进行初始化">
+  <meta name="description" content="Backgroud  公司有一个老项目，java springboot 后台管理系统， 页面是放在后端渲染的，之前某位前端用的是jquery bootsrap 等一系列老旧的生态，基本上一个功能一个页面，耦合特别严重，每个页面基本从上个页面copy paste，一些css js的引用基本都差不多，甚至用不到的都引入（毕竟copy paste 一把梭），这个项目copy paste 4年多了，突然，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="潘烽的个人博客">
-<meta property="og:url" content="https://socalledPF.github.io/2019/03/06/Vue使用的注意事项/index.html">
-<meta property="og:site_name" content="潘烽的个人博客">
-<meta property="og:description" content="使用Vue的注意点组件通信相关 当父组件在生命周期钩子中异步设置props的时候，子组件在创建的时候不能保证能获取到props，所以需要在子组件外包裹一个曾v-if=”props”   数据绑定相关 绑定数据的时候，必须在data中进行初始化">
+<meta property="og:title" content="webpack实践之老旧的java后台管理系统">
+<meta property="og:url" content="https://socalledPF.github.io/2020/03/26/webpack实践之老旧的java后台管理系统/index.html">
+<meta property="og:site_name" content="socalledPF的个人博客">
+<meta property="og:description" content="Backgroud  公司有一个老项目，java springboot 后台管理系统， 页面是放在后端渲染的，之前某位前端用的是jquery bootsrap 等一系列老旧的生态，基本上一个功能一个页面，耦合特别严重，每个页面基本从上个页面copy paste，一些css js的引用基本都差不多，甚至用不到的都引入（毕竟copy paste 一把梭），这个项目copy paste 4年多了，突然，">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-03-18T15:01:45.995Z">
+<meta property="og:updated_time" content="2023-09-02T08:02:11.578Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="潘烽的个人博客">
-<meta name="twitter:description" content="使用Vue的注意点组件通信相关 当父组件在生命周期钩子中异步设置props的时候，子组件在创建的时候不能保证能获取到props，所以需要在子组件外包裹一个曾v-if=”props”   数据绑定相关 绑定数据的时候，必须在data中进行初始化">
+<meta name="twitter:title" content="webpack实践之老旧的java后台管理系统">
+<meta name="twitter:description" content="Backgroud  公司有一个老项目，java springboot 后台管理系统， 页面是放在后端渲染的，之前某位前端用的是jquery bootsrap 等一系列老旧的生态，基本上一个功能一个页面，耦合特别严重，每个页面基本从上个页面copy paste，一些css js的引用基本都差不多，甚至用不到的都引入（毕竟copy paste 一把梭），这个项目copy paste 4年多了，突然，">
   
-    <link rel="alternative" href="/atom.xml" title="潘烽的个人博客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="socalledPF的个人博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -50,7 +50,7 @@ ga('send', 'pageview');
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -63,7 +63,7 @@ ga('send', 'pageview');
 			<img src="null" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">潘烽</a></h1>
+		  <h1 class="header-author"><a href="/">PF</a></h1>
 		</hgroup>
 		
 
@@ -119,7 +119,7 @@ ga('send', 'pageview');
 				<img src="null" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">潘烽</h1>
+			  <h1 class="header-author js-header-author">PF</h1>
 			</hgroup>
 			
 			
@@ -163,18 +163,28 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Vue使用的注意事项" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-webpack实践之老旧的java后台管理系统" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webpack实践之老旧的java后台管理系统
+    </h1>
+  
+
+        
+        <a href="/2020/03/26/webpack实践之老旧的java后台管理系统/" class="archive-article-date">
+  	<time datetime="2020-03-26T02:33:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="使用Vue的注意点"><a href="#使用Vue的注意点" class="headerlink" title="使用Vue的注意点"></a>使用Vue的注意点</h1><h2 id="组件通信相关"><a href="#组件通信相关" class="headerlink" title="组件通信相关"></a>组件通信相关</h2><ol>
-<li>当父组件在生命周期钩子中异步设置props的时候，子组件在创建的时候不能保证能获取到props，所以需要在子组件外包裹一个曾v-if=”props” </li>
-</ol>
-<h2 id="数据绑定相关"><a href="#数据绑定相关" class="headerlink" title="数据绑定相关"></a>数据绑定相关</h2><ol>
-<li>绑定数据的时候，必须在data中进行初始化</li>
-</ol>
-
+        <h2 id="Backgroud"><a href="#Backgroud" class="headerlink" title="Backgroud"></a>Backgroud</h2><p>  公司有一个老项目，java springboot 后台管理系统， 页面是放在后端渲染的，之前某位前端用的是jquery bootsrap 等一系列老旧的生态，基本上一个功能一个页面，耦合特别严重，每个页面基本从上个页面copy paste，一些css js的引用基本都差不多，甚至用不到的都引入（毕竟copy paste 一把梭），这个项目copy paste 4年多了，突然，后端们说copy paste 好累啊，paste不动了，重构吧。</p>
+<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2>
       
 
       
@@ -232,7 +242,7 @@ ga('send', 'pageview');
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://socalledPF.github.io/2019/03/06/Vue使用的注意事项/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://socalledPF.github.io/2020/03/26/webpack实践之老旧的java后台管理系统/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -246,9 +256,18 @@ ga('send', 'pageview');
   
 <nav id="article-nav">
   
+    <a href="/2020/05/27/怪奇物语之CSS篇/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          怪奇物语之CSS篇
+        
+      </div>
+    </a>
   
-    <a href="/2018/09/26/JavaScript-自动分号相关/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JavaScript 自动分号机制</div>
+  
+    <a href="/2018/10/26/Vue使用的注意事项/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue使用注意事项</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -274,7 +293,7 @@ ga('send', 'pageview');
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 潘烽
+    		&copy; 2023 PF
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

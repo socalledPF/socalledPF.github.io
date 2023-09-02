@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://socalledPF.github.io">
   <title>记一次异步bug解决案例 | socalledPF的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="socalledPF的个人博客">
 <meta property="og:description" content="最近看了一个设计模式名为Singleton设计模式，这个设计模式相较于其余的设计模式比较简单。但是细节上有很多地方要考虑，比如多线程的情况下要考虑。这是我想起了我在做微信公众号开发的时候，也遇到script异步加载时序未控制好导致bug的经历。 微信公众号开发之JSSDK查看微信开发文档，就会发现要使用微信的JSAPI，就必须先配置JSSDK，所以时序上必须保证这个先完成的情况下，才能继续调用JS">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-10-20T05:46:07.673Z">
+<meta property="og:updated_time" content="2023-09-02T08:02:11.625Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记一次异步bug解决案例">
 <meta name="twitter:description" content="最近看了一个设计模式名为Singleton设计模式，这个设计模式相较于其余的设计模式比较简单。但是细节上有很多地方要考虑，比如多线程的情况下要考虑。这是我想起了我在做微信公众号开发的时候，也遇到script异步加载时序未控制好导致bug的经历。 微信公众号开发之JSSDK查看微信开发文档，就会发现要使用微信的JSAPI，就必须先配置JSSDK，所以时序上必须保证这个先完成的情况下，才能继续调用JS">
@@ -50,7 +50,7 @@ ga('send', 'pageview');
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -185,7 +185,7 @@ ga('send', 'pageview');
       
         <p>最近看了一个设计模式名为Singleton设计模式，这个设计模式相较于其余的设计模式比较简单。但是细节上有很多地方要考虑，比如多线程的情况下要考虑。这是我想起了我在做微信公众号开发的时候，也遇到script异步加载时序未控制好导致bug的经历。</p>
 <h2 id="微信公众号开发之JSSDK"><a href="#微信公众号开发之JSSDK" class="headerlink" title="微信公众号开发之JSSDK"></a>微信公众号开发之JSSDK</h2><p>查看微信开发文档，就会发现要使用微信的JSAPI，就必须先配置JSSDK，所以时序上必须保证这个先完成的情况下，才能继续调用JSAPI。</p>
-<p>实际开发的时候，引用script的顺序如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;script src=<span class="string">"path to jssdk"</span>&gt; &lt;/script&gt;</span><br><span class="line">&lt;script&gt; </span><br><span class="line">  <span class="comment">// set jssdk config</span></span><br><span class="line">  <span class="comment">// invoke js api</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>实际开发的时候，引用script的顺序如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;script src=<span class="string">"path to jssdk"</span>&gt; &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt; </span></span><br><span class="line"><span class="regexp">  /</span><span class="regexp">/ set jssdk config</span></span><br><span class="line"><span class="regexp">  /</span><span class="regexp">/ invoke js api</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure></p>
 <p>测试的时候，一切都可以调用，没有问题，实际上线的时候，在大量用户并发的情况下，出现了意外情况，很多用户根本没法使用产品，排查下来发现这个情况是请求后台的api延迟导致的，在jssdk还没配置的情况下，其余script异步加载，导致先执行，这个时序就有悖于当初的设计。</p>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>因为前后端分离，所以通过ajax发送请求，因为jQuery请求默认是异步的，所以得设置成同步。在这个请求结束的时候，才能继续执行下面的脚本。</p>
 <h2 id="另一个想法"><a href="#另一个想法" class="headerlink" title="另一个想法"></a>另一个想法</h2><p>根据加载顺序，将设置jssdk的script放在网页的最前面，这样在这个请求位完成的时候，可以阻塞页面的加载。（等待验证）</p>
@@ -298,7 +298,7 @@ ga('send', 'pageview');
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 PF
+    		&copy; 2023 PF
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
